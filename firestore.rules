@@ -1,0 +1,13 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /wishes/{id} {
+      // Anyone with the link can open a wish, but only until it expires.
+      allow get: if resource.data.expiresAt > request.time;
+
+      // Only you (the admin) can list, create, edit and delete wishes.
+      // Replace PASTE_YOUR_ADMIN_UID with your UID from Firebase Authentication.
+      allow read, write: if request.auth != null && request.auth.uid == "PASTE_YOUR_ADMIN_UID";
+    }
+  }
+}
