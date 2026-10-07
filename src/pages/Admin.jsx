@@ -14,8 +14,8 @@ import ParticleCanvas from '../components/ParticleCanvas.jsx'
 
 const auth = app ? getAuth(app) : null
 const DAY = 86400000
-const linkFor = (id) => `${window.location.origin}/w/${id}`
-const shareText = (name, id) => `🎁 A birthday surprise for ${name}! Open it here: ${linkFor(id)}`
+const linkFor = (id) => `${window.location.origin}${window.location.pathname}#/w/${id}`
+const shareText = (name, id) => `ðŸŽ A birthday surprise for ${name}! Open it here: ${linkFor(id)}`
 
 export default function Admin() {
   const [user, setUser] = useState(undefined)
@@ -24,7 +24,7 @@ export default function Admin() {
 
   let body
   if (!isConfigured && !demoMode) body = <SetupNotice onBypass={() => setDemoMode(true)} />
-  else if (user === undefined && isConfigured) body = <div className="notice"><p>Checking admin login status…</p></div>
+  else if (user === undefined && isConfigured) body = <div className="notice"><p>Checking admin login statusâ€¦</p></div>
   else if (!user && isConfigured && !demoMode) body = <Login />
   else body = <Dashboard user={user} isDemo={demoMode} />
 
@@ -57,10 +57,10 @@ function SetupNotice({ onBypass }) {
       </p>
       <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem', justifyContent: 'center' }}>
         <button type="button" className="btn btn-accent" onClick={onBypass}>
-          Explore Admin Dashboard (Demo Mode) 🚀
+          Explore Admin Dashboard (Demo Mode) ðŸš€
         </button>
         <Link className="btn" to="/w/demo">
-          Open Sample Card 🎁
+          Open Sample Card ðŸŽ
         </Link>
       </div>
     </div>
@@ -94,7 +94,7 @@ function Login() {
       </div>
       {error && <p className="notice notice-err">{error}</p>}
       <button className="btn btn-accent btn-big" style={{ width: '100%', marginTop: '0.5rem' }} disabled={busy}>
-        {busy ? 'Logging in…' : 'Access Admin Dashboard'}
+        {busy ? 'Logging inâ€¦' : 'Access Admin Dashboard'}
       </button>
     </form>
   )
@@ -217,7 +217,7 @@ function Dashboard({ isDemo }) {
           <div className="admin-filter-bar">
             <input
               type="search"
-              placeholder="Search by name…"
+              placeholder="Search by nameâ€¦"
               value={search}
               onChange={(e) => setSearch(e.target.value)}
               className="admin-search-input"
@@ -256,7 +256,7 @@ function Dashboard({ isDemo }) {
         </div>
 
         {loadError && <p className="notice notice-err">{loadError}</p>}
-        {wishes === null && !loadError && <p>Loading cards list…</p>}
+        {wishes === null && !loadError && <p>Loading cards listâ€¦</p>}
         {wishes && filteredWishes.length === 0 && (
           <div className="panel" style={{ textAlign: 'center', padding: '3rem 1.5rem' }}>
             <p style={{ margin: 0, color: 'var(--blush)' }}>
@@ -281,8 +281,8 @@ function messageIdea(recipient, from, kind) {
   const name = recipient.trim() || 'you'
   const sign = from.trim() ? `\n\nWith love,\n${from.trim()}` : ''
   const ideas = {
-    warm: `Happy birthday, ${name}!\n\nI hope this year brings you gentle mornings, big laughs, and every little thing that makes you feel loved. I’m so grateful to have you in my life.${sign}`,
-    fun: `Happy birthday, ${name}!\n\nYou make every room brighter, every plan more fun, and every memory better. Here’s to another year of stories we’ll never stop laughing about!${sign}`,
+    warm: `Happy birthday, ${name}!\n\nI hope this year brings you gentle mornings, big laughs, and every little thing that makes you feel loved. Iâ€™m so grateful to have you in my life.${sign}`,
+    fun: `Happy birthday, ${name}!\n\nYou make every room brighter, every plan more fun, and every memory better. Hereâ€™s to another year of stories weâ€™ll never stop laughing about!${sign}`,
     short: `Happy birthday, ${name}!\n\nWishing you a beautiful year full of love, joy, and everything you deserve.${sign}`,
   }
   return ideas[kind]
@@ -413,7 +413,7 @@ function CreateForm({ onCreated }) {
           <div className="field">
             <label htmlFor="pl">Active Duration Plan</label>
             <select id="pl" value={f.days} onChange={set('days')}>
-              {SITE.plans.map((p) => <option key={p.days} value={p.days}>{p.label} (₹{p.price})</option>)}
+              {SITE.plans.map((p) => <option key={p.days} value={p.days}>{p.label} (â‚¹{p.price})</option>)}
             </select>
           </div>
         </div>
@@ -432,7 +432,7 @@ function CreateForm({ onCreated }) {
               {photoPreviews.map((src, idx) => (
                 <div key={idx} className="photo-preview-item">
                   <img src={src} alt={`Upload ${idx + 1}`} />
-                  <button type="button" onClick={() => removePhoto(idx)} title="Remove image">✕</button>
+                  <button type="button" onClick={() => removePhoto(idx)} title="Remove image">âœ•</button>
                 </div>
               ))}
             </div>
@@ -453,14 +453,14 @@ function CreateForm({ onCreated }) {
         {error && <p className="notice notice-err">{error}</p>}
         {created && (
           <div className="notice notice-ok">
-            <p><strong>✨ Birthday Card for {created.name} is Ready!</strong></p>
+            <p><strong>âœ¨ Birthday Card for {created.name} is Ready!</strong></p>
             <p className="link-line">{linkFor(created.id)}</p>
             <CopyButtons id={created.id} name={created.name} />
           </div>
         )}
 
         <button className="btn btn-accent btn-big" style={{ width: '100%' }} disabled={busy}>
-          {busy ? status || 'Processing Card…' : '🎁 Create Birthday Surprise Card'}
+          {busy ? status || 'Processing Cardâ€¦' : 'ðŸŽ Create Birthday Surprise Card'}
         </button>
       </form>
 
@@ -491,16 +491,16 @@ function CopyButtons({ id, name }) {
     <>
       <div className="wish-actions">
         <button type="button" className="btn btn-small" onClick={() => copy(linkFor(id), 'link')}>
-          {copied === 'link' ? 'Copied ✓' : 'Copy Link'}
+          {copied === 'link' ? 'Copied âœ“' : 'Copy Link'}
         </button>
         <button type="button" className="btn btn-small" onClick={() => copy(shareText(name, id), 'msg')}>
-          {copied === 'msg' ? 'Copied ✓' : 'Copy WhatsApp Text'}
+          {copied === 'msg' ? 'Copied âœ“' : 'Copy WhatsApp Text'}
         </button>
         <button type="button" className="btn btn-small" onClick={() => setShowQR(true)}>
-          Show QR Code 📱
+          Show QR Code ðŸ“±
         </button>
         <a className="btn btn-small btn-accent" href={linkFor(id)} target="_blank" rel="noreferrer">
-          Open Card ↗
+          Open Card â†—
         </a>
       </div>
 
@@ -548,7 +548,7 @@ function WishRow({ w, onChange }) {
           </button>
         ))}
         <button type="button" className="btn btn-small btn-danger" onClick={remove} style={{ marginLeft: 'auto' }}>
-          Delete Card 🗑️
+          Delete Card ðŸ—‘ï¸
         </button>
       </div>
     </li>
