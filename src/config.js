@@ -1,9 +1,9 @@
-// Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ Edit this file to make the site yours Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬
+// ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ Edit this file to make the site yours ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬
 
 export const SITE = {
   name: 'Wishbox',
   // Your WhatsApp number with country code, digits only. Example: 919876543210
-  whatsappNumber: '91XXXXXXXXXX',
+  whatsappNumber: '918200495373',
   upiId: '8200495373@upi',
   // Put your QR image in the /public folder and change this path, e.g. '/upi-qr.png'
   qrImage: `${import.meta.env.BASE_URL}upi-qr.svg`,
@@ -15,7 +15,7 @@ export const SITE = {
   ],
 }
 
-// From Firebase console Ã¢â€ â€™ Project settings Ã¢â€ â€™ Your apps Ã¢â€ â€™ Web app Ã¢â€ â€™ Config
+// From Firebase console ÃƒÂ¢Ã¢â‚¬Â Ã¢â‚¬â„¢ Project settings ÃƒÂ¢Ã¢â‚¬Â Ã¢â‚¬â„¢ Your apps ÃƒÂ¢Ã¢â‚¬Â Ã¢â‚¬â„¢ Web app ÃƒÂ¢Ã¢â‚¬Â Ã¢â‚¬â„¢ Config
 export const firebaseConfig = {
   apiKey: 'YOUR_API_KEY',
   authDomain: 'YOUR_PROJECT.firebaseapp.com',
@@ -25,7 +25,7 @@ export const firebaseConfig = {
   appId: 'YOUR_APP_ID',
 }
 
-// From Cloudinary dashboard (cloud name) and Settings Ã¢â€ â€™ Upload Ã¢â€ â€™ Upload presets
+// From Cloudinary dashboard (cloud name) and Settings ÃƒÂ¢Ã¢â‚¬Â Ã¢â‚¬â„¢ Upload ÃƒÂ¢Ã¢â‚¬Â Ã¢â‚¬â„¢ Upload presets
 export const CLOUDINARY = {
   cloudName: 'YOUR_CLOUD_NAME',
   uploadPreset: 'YOUR_UNSIGNED_PRESET',
